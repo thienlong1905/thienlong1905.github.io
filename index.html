@@ -5,67 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML Basic</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background-color: #f4f4f4;
-            padding: 50px;
-        }
-
-        .form-container {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-            display: inline-block;
-        }
-
+        /* Tùy chỉnh ô nhập mật khẩu */
         .password-container {
             position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-top: 10px;
+            display: inline-block;
         }
 
         input[type="password"], input[type="text"] {
             width: 250px;
-            padding: 12px;
+            padding: 10px;
             font-size: 16px;
             border: 2px solid #4CAF50;
             border-radius: 10px;
             outline: none;
             transition: 0.3s;
-            background-color: #fff;
         }
 
         input[type="password"]:focus, input[type="text"]:focus {
             border-color: #ff9800;
-            box-shadow: 0 0 8px rgba(255, 152, 0, 0.6);
+            box-shadow: 0 0 5px rgba(255, 152, 0, 0.5);
         }
 
         .toggle-password {
             position: absolute;
-            right: 15px;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
             cursor: pointer;
             font-size: 18px;
-            color: #555;
-        }
-
-        button {
-            background: #4CAF50;
-            color: white;
-            padding: 12px 20px;
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            cursor: pointer;
-            transition: 0.3s;
-            margin-top: 15px;
-        }
-
-        button:hover {
-            background: #45a049;
         }
     </style>
 </head>
@@ -74,17 +41,17 @@
     <h1>HTML Basic</h1>
     <p><b><big>By Admin of this Website<br> Hello, My name is <mark><ins>Long</ins></mark>! <br> 
         I am studying <mark><ins>HTML Basic</ins></mark>. I feel HTML isn't hard but it also not easy</big></b></p>
+    <img src="./Pictures/avatar2.jpg" alt="This is my old avatar" title="This is my avatar" width="300">
+    <a href="Introduce.html" target="_blank"><h2>Introduce Myself</h2></a>
 
-    <div class="form-container">
-        <form onsubmit="event.preventDefault(); checkPassword();">
-            <label for="password">Nhập mật khẩu:</label>
-            <div class="password-container">
-                <input type="password" id="password" name="password" required>
-                <span class="toggle-password" onclick="togglePassword()">👁️</span>
-            </div>
-            <button type="submit">Xác nhận</button>
-        </form>
-    </div>
+    <form onsubmit="event.preventDefault(); checkPassword();">
+        <label for="password">Nhập mật khẩu:</label>
+        <div class="password-container">
+            <input type="password" id="password" name="password" required>
+            <span class="toggle-password" onclick="togglePassword()">👁️</span>
+        </div>
+        <button type="submit">Xác nhận</button>
+    </form>
 
     <script>
         function checkPassword() {
