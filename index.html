@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Basic</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            padding: 50px;
+        }
+
+        .form-container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            display: inline-block;
+        }
+
+        .password-container {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        input[type="password"], input[type="text"] {
+            width: 250px;
+            padding: 12px;
+            font-size: 16px;
+            border: 2px solid #4CAF50;
+            border-radius: 10px;
+            outline: none;
+            transition: 0.3s;
+            background-color: #fff;
+        }
+
+        input[type="password"]:focus, input[type="text"]:focus {
+            border-color: #ff9800;
+            box-shadow: 0 0 8px rgba(255, 152, 0, 0.6);
+        }
+
+        .toggle-password {
+            position: absolute;
+            right: 15px;
+            cursor: pointer;
+            font-size: 18px;
+            color: #555;
+        }
+
+        button {
+            background: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-top: 15px;
+        }
+
+        button:hover {
+            background: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>HTML Basic</h1>
+    <p><b><big>By Admin of this Website<br> Hello, My name is <mark><ins>Long</ins></mark>! <br> 
+        I am studying <mark><ins>HTML Basic</ins></mark>. I feel HTML isn't hard but it also not easy</big></b></p>
+
+    <div class="form-container">
+        <form onsubmit="event.preventDefault(); checkPassword();">
+            <label for="password">Nhập mật khẩu:</label>
+            <div class="password-container">
+                <input type="password" id="password" name="password" required>
+                <span class="toggle-password" onclick="togglePassword()">👁️</span>
+            </div>
+            <button type="submit">Xác nhận</button>
+        </form>
+    </div>
+
+    <script>
+        async function hashPassword(password) {
+            const encoder = new TextEncoder();
+            const data = encoder.encode(password);
+            const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+            const hashArray = Array.from(new Uint8Array(hashBuffer));
+            return hashArray.map(byte => byte.toString(16).padStart(2, '0')).join('');
+        }
+
+        async function checkPassword() {
+            var password = document.getElementById("password").value;
+            var hashedInput = await hashPassword(password);
+            var correctHash = "916ef8f6505ae38fdf35f4bb05f4b993ffdc540c6908e1233e318e8bfec7dd1b"; // Mã hóa của "DoThiBaoNgoc"
+
+            if (hashedInput === correctHash) {
+                alert("Mật khẩu đúng!");
+                window.location.href = "./MyLetter/letter.html";
+            } else {
+                alert("Mật khẩu sai! Vui lòng thử lại.");
+            }
+        }
+
+        function togglePassword() {
+            var passwordField = document.getElementById("password");
+            passwordField.type = passwordField.type === "password" ? "text" : "password";
+        }
+    </script>
+
+</body>
+</html>

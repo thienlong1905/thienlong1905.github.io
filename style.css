@@ -1,0 +1,18 @@
+input[type="password"] {
+    width: 250px;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #4CAF50; /* Viền màu xanh lá */
+    border-radius: 10px; /* Bo tròn góc */
+    outline: none;
+    transition: 0.3s;
+}
+
+input[type="password"]:focus {
+    border-color: #ff9800; /* Thay đổi màu viền khi nhập */
+    box-shadow: 0 0 5px rgba(255, 152, 0, 0.5); /* Hiệu ứng ánh sáng */
+}
+input[type="password"] {
+    background: linear-gradient(to right, #2196F3, #4CAF50); /* Gradient nền */
+    color: white; /* Chữ màu trắng */
+}
