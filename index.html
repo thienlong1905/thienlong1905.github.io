@@ -87,20 +87,9 @@
     </div>
 
     <script>
-        async function hashPassword(password) {
-            const encoder = new TextEncoder();
-            const data = encoder.encode(password);
-            const hashBuffer = await crypto.subtle.digest('SHA-256', data);
-            const hashArray = Array.from(new Uint8Array(hashBuffer));
-            return hashArray.map(byte => byte.toString(16).padStart(2, '0')).join('');
-        }
-
-        async function checkPassword() {
+        function checkPassword() {
             var password = document.getElementById("password").value;
-            var hashedInput = await hashPassword(password);
-            var correctHash = "916ef8f6505ae38fdf35f4bb05f4b993ffdc540c6908e1233e318e8bfec7dd1b"; // Mã hóa của "DoThiBaoNgoc"
-
-            if (hashedInput === correctHash) {
+            if (password === "DoThiBaoNgoc") {
                 alert("Mật khẩu đúng!");
                 window.location.href = "./MyLetter/letter.html";
             } else {
@@ -110,7 +99,11 @@
 
         function togglePassword() {
             var passwordField = document.getElementById("password");
-            passwordField.type = passwordField.type === "password" ? "text" : "password";
+            if (passwordField.type === "password") {
+                passwordField.type = "text";
+            } else {
+                passwordField.type = "password";
+            }
         }
     </script>
 
