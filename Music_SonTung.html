@@ -1,9 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
+    <title>Son Tung's Music</title>
+    <meta charset="UTF-8">  
+    <meta name = "Son Tung's Music Page" content = "Son Tung's Music" />
+    <meta name = "keywords" content = "Son Tung's Music" />
+    <meta name = "Son Tung's Music description" content = "Son Tung's Music" />
+    <meta name = "author" content = "Thiên Long" />
+    <meta name = "viewport" content = "width=device-width, initial-scale=1.0" />
+    <meta http-equiv="refresh" content="900" />
+    <link rel = "stylesheet" href="style.css">
 </head>
-<img>
+<body id = "body4">
     <h1>Wellcome to Son Tung's Music</h1>
     <p><b><big>Son Tung is a singer and a composer. He is very famous in VietNam. He has many songs such as: Chạy Ngay Đi, Nơi Này Có Anh, Có Chắc Yêu Là Đây,....</big></b></p>
     <img src = "./Pictures/SonTung.jpg" alt = "Son Tung" title="This is Son Tung"height = "300"> <img src = "./Pictures/Son-Tung.png" alt = "Son Tung" title="This is Son Tung"height = "300"> <img src = "./Pictures/SonTung2.jpg" alt = "Son Tung" title="This is Son Tung"height = "300"> <img src = "./Pictures/SonTung3.jpg" alt = "Son Tung" title="This is Son Tung"height = "300"> 
@@ -12,5 +20,28 @@
         <source src = "./Video/Nơi Này Có Anh.webm">
         <source src = "./Video/Nơi Này Có Anh.ogv">
     </video>
+
+    <div>
+        <button id="toggleBtn" style ="border-radius: 10px; background-color: grey">
+            <h2>Change Light-Dark Mode</h2>
+        </button>
+    </div>
+    <script>
+        document.getElementById("toggleBtn").addEventListener("click", function() {
+          document.body.classList.toggle("dark-mode");
+          
+          // Lưu trạng thái vào localStorage
+          if (document.body.classList.contains("dark-mode")) {
+            localStorage.setItem("theme", "dark");
+          } else {
+            localStorage.setItem("theme", "light");
+          }
+        });
+      
+        // Kiểm tra trạng thái khi tải trang
+        if (localStorage.getItem("theme") === "dark") {
+          document.body.classList.add("dark-mode");
+        }
+    </script>
 </body>
 </html>

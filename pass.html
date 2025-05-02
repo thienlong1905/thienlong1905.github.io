@@ -1,9 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HTML Basic</title>
+    <title>Pass</title>
+    <meta charset="UTF-8">  
+    <meta name = "Pass Page" content = "Pass" />
+    <meta name = "keywords" content = "Pass" />
+    <meta name = "Pass description" content = "Pass" />
+    <meta name = "author" content = "Thiên Long" />
+    <meta name = "viewport" content = "width=device-width, initial-scale=1.0" />
+    <meta http-equiv="refresh" content="900" />
+    <link rel = "stylesheet" href="style.css">
     <style>
         /* Tùy chỉnh ô nhập mật khẩu */
         .password-container {
@@ -66,6 +72,17 @@
                 passwordField.type = "password";
             }
         }
+    </script>
+    
+    <div>
+        <button id="toggleBtn" style ="border-radius: 10px; background-color: grey">
+            <h2>Change Light-Dark Mode</h2>
+        </button>
+    </div>
+    <script>
+    document.getElementById("toggleBtn").addEventListener("click", function() {
+        document.body.classList.toggle("dark-mode");
+      });
     </script>
 </body>
 </html>

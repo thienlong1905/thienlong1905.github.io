@@ -1,14 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    
+    <title>HTML Basic</title>
+    <meta charset="UTF-8">  
+    <meta name = "Home Page" content = "HTML Basic" />
+    <meta name = "keywords" content = "Home HTML Basic" />
+    <meta name = "Home description" content = "HTML Basic" />
+    <meta name = "author" content = "Thiên Long" />
+    <meta name = "viewport" content = "width=device-width, initial-scale=1.0" />
+    <meta http-equiv="refresh" content="900" />
+    <link rel = "stylesheet" href="style.css">
 </head>
-<body>
+<body id = "body1">
 
     <h1>HTML Basic</h1>
+
     <p><b><big>By Admin of this Website<br> Hello, My name is <mark><ins>Long</ins></mark>! <br> 
         I am studying <mark><ins>HTML Basic</ins></mark>. I feel HTML isn't hard but it also not easy</big></b></p>
-    <img src="./Pictures/avatar2.jpg" alt="This is my old avatar" title="This is my avatar" width="300">
-    <a href="Introduce.html" target="_blank"><h2>Introduce Myself</h2></a>
+
+    <details>
+        <summary><b><big>List of Programming Languages I Know</big></b></summary>
+        <p><b><big>Python</big></b></p>
+        <p><b><big>C#</big></b></p>
+        <p><b><big>Javascript</big></b></p>
+        <p><b><big>HTML</big></b></p>
+    </details>
+    
+    <img id = "avatar" src="./Pictures/avatar2.jpg" alt="This is my old avatar" title="This is my avatar" width="300">
+
+    
+    <div><a href="Introduce.html" target="_blank">
+        <button style = "border-radius: 10px; background-color: grey">
+            <div><img style = "border-radius: 10px;" src="./Pictures/Introduce.jpg" height="300" alt="Introduce Myself" title="This is my Introduce Myself"></div>
+            <div><h2>Click me to come my Introduce pages</h2></div>
+        </button> 
+        
+        
+        
+    </a> <h2><b><big>This is my Introduce Myself</big></b></h2></div>
+    
+    <h2>Please click my picture of Introduce Myself to come my Introduce pages</h2>
+    
+    <div>
+        <button id="toggleBtn" style ="border-radius: 10px; background-color: grey">
+            <h2>Change Light-Dark Mode</h2>
+        </button>
+    </div>
+    <script>
+        document.getElementById("toggleBtn").addEventListener("click", function() {
+          document.body.classList.toggle("dark-mode");
+          
+          // Lưu trạng thái vào localStorage
+          if (document.body.classList.contains("dark-mode")) {
+            localStorage.setItem("theme", "dark");
+          } else {
+            localStorage.setItem("theme", "light");
+          }
+        });
+      
+        // Kiểm tra trạng thái khi tải trang
+        if (localStorage.getItem("theme") === "dark") {
+          document.body.classList.add("dark-mode");
+        }
+    </script>
 </body>
 </html>
