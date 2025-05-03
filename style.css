@@ -4,6 +4,28 @@ body{
     background-attachment: fixed;
     color: #000000;
 }
+h1{
+    font-family: "Script MT Bold", cursive;
+    font-size: 50px;
+}
+h2{
+    font-family: "Dancing script", cursive;
+    font-size: 30px;
+}
+p{
+    font-family: "Dancing script", cursive;
+    font-size: 20px;
+}
+summary{
+    font-family: "Dancing script", cursive;
+    font-size: 20px;
+}
+details{
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+}
 #avatar{
     border-radius: 50%;
     border: 5px solid white;
@@ -34,4 +56,20 @@ button{
     background-repeat: no-repeat;
     background-attachment: fixed;
     color: #ffffff;
+}
+#Home{
+    background-color: grey; /* Green */
+    border: none;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+    position:absolute;
+    bottom: -500px;
+    left: 440px
 }
