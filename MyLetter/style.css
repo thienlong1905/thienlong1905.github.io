@@ -4,6 +4,28 @@ body{
     background-attachment: fixed;
     color: #000000;
 }
+h1{
+    font-family: "Script MT Bold", cursive;
+    font-size: 50px;
+}
+h2{
+    font-family: "Dancing script", cursive;
+    font-size: 30px;
+}
+p{
+    font-family: "Dancing script", cursive;
+    font-size: 20px;
+}
+summary{
+    font-family: "Dancing script", cursive;
+    font-size: 20px;
+}
+details{
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+}
 #avatar{
     border-radius: 50%;
     border: 5px solid white;
